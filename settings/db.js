@@ -1,12 +1,13 @@
 const mysql = require('mysql')
+const config = require('../config')
 
 const connection = mysql.createConnection({
-    host: 'localhost',
-    socketPath: '/Applications/MAMP/tmp/mysql/mysql.sock',
-    port: 8888,
-    user: 'root',
-    password: 'root',
-    database: 'rest'
+    host: config.HOST,
+    socketPath: config.SOCKET,
+    port: config.PORT,
+    user: config.DBUSER,
+    password: config.DBPASSWORD,
+    database: config.DBNAME
 })
 
 connection.connect((error) => {

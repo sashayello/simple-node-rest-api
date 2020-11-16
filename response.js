@@ -1,12 +1,13 @@
 'use strict'
 
-exports.status = (values, res) => {
+exports.status = (status, values, res) => {
 
     const data = {
-        "satus": 200,
+        "satus": status,
         "values": values
     }
 
+    res.status(data.satus)
     res.json(data)
     res.end()
 
